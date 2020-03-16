@@ -21,7 +21,7 @@ public  class LoginTest  {
 	WebElement eleLogin,eleEmail,elePwd,eleText,eleProfile,eleUser,eleMyProfile,eleLogOut;
 	String expectedTitle="CLICKDOC";
 	String str="Bitte überprüfen Sie Ihre E-Mail-Adresse, Passwort und probieren Sie es noch einmal.";
-
+	String path="C:\\Users\\Tony\\eclipse-workspace\\CGM";  //Give the path of chromedriver.exe file here
 
 	@Test(priority = 0)
 
@@ -117,7 +117,7 @@ public  class LoginTest  {
 		//Assert.assertEquals(eleText.getText(),str);//information about mismatch in inputs
 		Assert.assertEquals(eleLogin.isEnabled(),false);//Login blocked
 	}
-	
+
 	@Test(priority = 7)
 
 	public void validlogin() throws InterruptedException ,ClassNotFoundException  {
@@ -125,7 +125,7 @@ public  class LoginTest  {
 		elePwd.clear();
 		eleEmail .sendKeys("dirk.nonn@cgm.com#1111");  //valid mail              			
 		elePwd.sendKeys("recruitingTest1!");   //valid password
-		
+
 		eleLogin.click();
 
 		driver.switchTo().parentFrame();//Coming out of frame
@@ -136,7 +136,7 @@ public  class LoginTest  {
 
 		Assert.assertEquals(driver.getCurrentUrl(),"https://demo.clickdoc.de/cd-de/my-profile/personal-data");//Login Performed
 
-		
+
 		Assert.assertEquals(eleUser.isEnabled(),true);//Login blocked
 		//Assert.assertEquals(eleProfile.isEnabled(),false);//Login blocked
 
@@ -174,7 +174,7 @@ public  class LoginTest  {
 
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tony\\eclipse\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", path);
 
 	}
 

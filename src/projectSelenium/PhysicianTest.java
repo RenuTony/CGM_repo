@@ -29,6 +29,8 @@ public class PhysicianTest {
 	int i;
 	String actualTitle;
 	String expectedTitle="CLICKDOC";
+	String path="C:\\Users\\Tony\\eclipse-workspace\\CGM";  //Give the path of chromedriver.exe file here
+
 
 	@Test(priority = 0) 
 	public void start()   {
@@ -86,7 +88,7 @@ public class PhysicianTest {
 		Assert.assertEquals(true, eleSlider.isDisplayed());
 
 	}
-	
+
 	@Test(priority = 4)
 	public void resultSection() {
 		Assert.assertEquals("AUF DER LINKEN SEITE KANNST DU DIE ARZTSUCHE STARTEN.", eleResult.getText());
@@ -347,10 +349,10 @@ public class PhysicianTest {
 		if(options.size()==0)
 			found=false;
 		else
-		for (WebElement option1 : options) {
-			if(option1.getText().contains("Barrierfrei"));
-			else found=false;
-		}		Assert.assertEquals( found.booleanValue(),true );
+			for (WebElement option1 : options) {
+				if(option1.getText().contains("Barrierfrei"));
+				else found=false;
+			}		Assert.assertEquals( found.booleanValue(),true );
 
 	}
 	@Test(priority = 18)
@@ -358,10 +360,10 @@ public class PhysicianTest {
 		//Alphabetical-Sort
 		Thread.sleep(2000);
 		js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250)");
+		js.executeScript("window.scrollBy(0,250)");
 		Thread.sleep(2000);
 
-        eleAlpha=driver.findElement(By.xpath("//body/app-root/div/div/app-search/div/div[@id='search']/div/div/div/div/app-sort/div/div/div[3]/div[1]/div[1]"));
+		eleAlpha=driver.findElement(By.xpath("//body/app-root/div/div/app-search/div/div[@id='search']/div/div/div/div/app-sort/div/div/div[3]/div[1]/div[1]"));
 		eleAlpha.click();
 		Thread.sleep(2000);
 
@@ -457,7 +459,7 @@ public class PhysicianTest {
 	}
 	@Test(priority = 20)
 	public void dragSlider() throws InterruptedException {
-		
+
 		action= new Actions(driver);
 		Thread.sleep(2000);
 
@@ -498,7 +500,7 @@ public class PhysicianTest {
 	}
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tony\\eclipse\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", path);
 
 	}
 
