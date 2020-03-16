@@ -21,7 +21,7 @@ public  class LoginTest  {
 	WebElement eleLogin,eleEmail,elePwd,eleText,eleProfile,eleUser,eleMyProfile,eleLogOut;
 	String expectedTitle="CLICKDOC";
 	String str="Bitte überprüfen Sie Ihre E-Mail-Adresse, Passwort und probieren Sie es noch einmal.";
-	String path="C:\\Users\\Tony\\eclipse-workspace\\CGM";  //Give the path of chromedriver.exe file here
+	String path="C:\\Users\\Tony\\eclipse-workspace\\CGM\\chromedriver.exe";  //Give the path of chromedriver.exe file here
 
 	@Test(priority = 0)
 

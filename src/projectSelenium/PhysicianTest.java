@@ -29,7 +29,7 @@ public class PhysicianTest {
 	int i;
 	String actualTitle;
 	String expectedTitle="CLICKDOC";
-	String path="C:\\Users\\Tony\\eclipse-workspace\\CGM";  //Give the path of chromedriver.exe file here
+	String path="C:\\\\Users\\\\Tony\\\\eclipse-workspace\\\\CGM\\\\chromedriver.exe";  //Give the path of chromedriver.exe file here
 
 
 	@Test(priority = 0) 
